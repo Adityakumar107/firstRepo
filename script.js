@@ -1,28 +1,31 @@
-// hamko karna ye hai ki jab uspe click kare to jo 1 likha hua hai wo badhe
-// jo cart ke upar icon ke pass likhe hua hai wo bhi badhe
-// or jab add to cart kare to waha par 1 item add ho jaye
+let plusKaro = document.querySelector(".plus")
+let minusKaro = document.querySelector(".minus")
+let quantity = document.querySelector(".Plus-minus")
+let itemShow = document.querySelector(".box")
+let addtocartBtn = document.querySelector("#btn")
+let removetocartBtn = document.querySelector("#btn2")
+var counter = 1
+plusKaro.addEventListener("click",()=>{
+     counter++
+     quantity.innerHTML = counter
+     
+})
 
-// var btn = document.querySelector("#btn")
-// var increaseNum = document.querySelector(".box")
-// var plusMinus = document.querySelector(".Plus-minus")
-// var increase = document.querySelector(".plus")
-// var decrease = document.querySelector(".minus")
-// btn.addEventListener("click",()=>{
-// increaseNum.innerHTML="1",
-// increaseNum.style.opacity=1
-// plusMinus.innerHTML=1
-// })
-// increase.addEventListener("click",()=>{
-//     increaseNum.innerHTML="1",
-//     increaseNum.style.opacity=1
-//     plusMinus.innerHTML=1
-// })
-// decrease.addEventListener("click",()=>{
-//     increaseNum.innerHTML="0",
-//     increaseNum.style.opacity=0
-//     plusMinus.innerHTML=0
-// })
-for(var i=1; i<11; i++){
-    
-}
-console.log(i)
+minusKaro.addEventListener("click",()=>{
+       if(counter > 1){
+        counter--
+        quantity.innerHTML = counter
+    }
+    else{
+        counter = 1
+    }
+
+})
+addtocartBtn.addEventListener("click",()=>{
+    itemShow.innerHTML=1
+    itemShow.innerHTML=counter
+    itemShow.style.opacity = 1
+})
+removetocartBtn.addEventListener("click",()=>{
+itemShow.style.opacity = 0
+})
